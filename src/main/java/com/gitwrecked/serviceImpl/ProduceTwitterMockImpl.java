@@ -1,27 +1,20 @@
-package com.gitwrecked.controller;
+package com.gitwrecked.serviceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
 import com.gitwrecked.domain.TwitterDTO;
+import com.gitwrecked.service.ProduceTwitterMock;
 import com.gitwrecked.utils.Constants;
 
-@RestController
-public class MockTwitterController {
+@Service
+public class ProduceTwitterMockImpl implements ProduceTwitterMock {
 
-	@RequestMapping("/mock/stream")
-	public List<TwitterDTO> mockStream(){
-		
-		return mockTwitterDTO();
-	}
-
-	
-	
-	private List<TwitterDTO> mockTwitterDTO() {
+	@Override
+	public List<TwitterDTO> mockTwitterDTO(){
 		
 		List<TwitterDTO> twitterDTOList = new ArrayList <TwitterDTO>();
 		int min = 1;
@@ -35,9 +28,11 @@ public class MockTwitterController {
 		}
 		
 		return twitterDTOList;
+		
 	}
-
-	private String createMockUser() {
+	
+	@Override
+	public String createMockUser() {
 		
 		int min = 1;
 		int max = 10;
@@ -52,5 +47,4 @@ public class MockTwitterController {
 	    
 	    return String.valueOf(charArray);
 	}
-	
 }
