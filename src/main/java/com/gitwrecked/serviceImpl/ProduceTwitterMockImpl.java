@@ -18,7 +18,7 @@ public class ProduceTwitterMockImpl implements ProduceTwitterMock {
 		
 		List<TwitterDTO> twitterDTOList = new ArrayList <TwitterDTO>();
 		int min = 1;
-		int max = 5000;
+		int max = 5;
 		
 		for(int i = 0 ; i < max; i ++){
 			TwitterDTO temp = new TwitterDTO();

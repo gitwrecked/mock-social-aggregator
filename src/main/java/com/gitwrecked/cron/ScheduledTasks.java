@@ -15,7 +15,7 @@ public class ScheduledTasks {
 	ProduceTwitterMock produceTwitterMock;
 	
 	//push every n seconds
-	@Scheduled(fixedRate = 2000)
+//	@Scheduled(fixedRate = 2000)
 	public void executePushToKafka(){
 //		produceTwitterMock.mockTwitterDTO();
 		
